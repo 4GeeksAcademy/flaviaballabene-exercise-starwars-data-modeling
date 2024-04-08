@@ -40,11 +40,11 @@ class Favourites(Base):
     __tablename__ = 'favourites'
     favourite_id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('user.user_id'))
-    # character_id = Column(Integer, ForeignKey('character.character_id'))
-    # planet_id = Column(Integer, ForeignKey('planet.planet_id'))
+    character_id = Column(Integer, ForeignKey('character.character_id'))
+    planet_id = Column(Integer, ForeignKey('planet.planet_id'))
     user = relationship(User)
-    # character = relationship(Character)
-    # planet = relationship(Planets)
+    character = relationship("Character")
+    planet = relationship("Planets")
 
 class Character(Base):
     __tablename__ = 'character'
